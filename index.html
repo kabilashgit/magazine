@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap 4 Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/styles.min.css">
+    <script src="assets/jquery-3.2.1.min.js"></script>
+    <script src="assets/glfx.js"></script>
+    <script src="assets/custom.js"></script>
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row no-gutters justify-content-center align-items-center h-100">
+        <div class="col-md-5 left-area">
+            <div class="templates d-flex">
+                <div class="row">
+                    <div class="col"><img src="http://via.placeholder.com/480x320.jpg" alt="" class="img-fluid thumbnail"></div>
+                    <div class="col"><img src="http://via.placeholder.com/480x320.jpg" alt="" class="img-fluid thumbnail"></div>
+                    <div class="col"><img src="http://via.placeholder.com/480x320.jpg" alt="" class="img-fluid thumbnail"></div>
+                </div>
+            </div>
+            <div class="upload">
+                <input type="file" name="input_img" id="input_img">
+            </div>
+            <div class="editing">
+                <p>Editing</p>
+                <div id="editor">
+                    <div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="noFilter" name="radioInput" class="custom-control-input" value="none">
+                            <label for="noFilter" class="custom-control-label">None</label>
+                        </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="sepiaInput" name="radioInput" class="custom-control-input" value="sepia">
+                                <label for="sepiaInput" class="custom-control-label">SEPIA</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="greyScale" name="radioInput" class="custom-control-input" value="greyscale">
+                                <label for="greyScale" class="custom-control-label">GreyScale</label>
+                            </div>
+                    </div>
+
+                    <div class="slider">
+                        <div class="row">
+                            <div class="col-3">
+
+                                <label for="scale">Scale</label>
+                            </div>
+                            <div class="col-9">
+                                <input type="range" class="custom-range" min="1" max="2" step=".1" id="scale" value="1">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-3">
+
+                            <label for="brightnessCheckbox"><input type="checkbox" name="brightnessCheckbox" id="brightnessCheckbox" value="off">Brightness</label>
+                        </div>
+                            <div class="col-9">
+                                <input type="range" class="custom-range" min="50" max="100" id="brightness" disabled>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-3">
+                                <label for="contrastCheckbox"><input type="checkbox" name="contrastCheckbox" id="contrastCheckbox" value="off">Contrast</label>
+                            </div>
+                            <div class="col-9">
+                                <input type="range" class="custom-range" min="50" max="100" id="contrast" disabled>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-3">
+                                <label for="saturationCheckbox"><input type="checkbox" name="saturationCheckbox" id="saturationCheckbox" value="off">Saturation</label>
+                            </div>
+                            <div class="col-9">
+                                <input type="range" class="custom-range" min="0" max="100" id="saturation" disabled>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-7 right-area">
+            <div class="bg-bound">
+                <div id="bg_area">
+                    <img src="assets/download.png" alt="" class="img-fluid">
+                    <img alt="" class="img-fluid" id="uploadedImg">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

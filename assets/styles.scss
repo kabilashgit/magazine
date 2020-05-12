@@ -1,0 +1,70 @@
+@import "bootstrap.min.css";
+
+
+.container-fluid {
+  height: 100vh;
+  overflow: hidden;
+
+  .left-area {
+    padding: 15px;
+
+    .editing {
+      #editor {
+        background: #171a1d;
+        color: white;
+        padding: 10px;
+
+        .slider {
+          margin: 15px 0 0;
+          input[type="checkbox"] {
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+  }
+
+  .right-area {
+    padding: 15px;
+    text-align: center;
+
+    .bg-bound {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      max-width: 550px;
+      margin: 0 auto;
+
+      #bg_area {
+        border: 1px solid #dedede;
+        background-color: #171a1d;
+        background-size: cover;
+        background-position: 100%;
+        background-repeat: no-repeat;
+        position: relative;
+
+        img {
+          position: relative;
+          max-height: 80vh;
+          z-index: 2;
+
+          &#uploadedImg {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            object-fit: cover;
+          }
+        }
+        canvas {
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+      }
+    }
+  }
+}
+
+
