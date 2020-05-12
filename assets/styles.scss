@@ -4,10 +4,14 @@
 .container-fluid {
   height: 100vh;
   overflow: hidden;
+  background-image: url('stars-pattern.png');
+  background-size: cover;
+  background-position: 100%;
+  background-repeat: no-repeat;
 
   .left-area {
     padding: 15px;
-
+    background-color: rgba(13, 127, 111, 0.77);
     .editing {
       #editor {
         background: #171a1d;
