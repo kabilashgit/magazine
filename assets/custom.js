@@ -32,6 +32,13 @@ $(function () {
             $($uploadedImg).css('filter', 'sepia(1)');
         }else if(selectedRadio === 'greyscale') {
             $($uploadedImg).css('filter', 'grayscale(1)');
+        }else if($('#fitImage').is(':checked')) {
+            console.log('fit')
+            $($uploadedImg).css('object-fit', 'contain')
+
+        }else if($('#fillImage').is(':checked')) {
+            console.log('fit')
+            $($uploadedImg).css('object-fit', 'cover');
         }else {
             $($uploadedImg).css('filter', 'none');
         }
@@ -92,6 +99,48 @@ $(function () {
         }
 
     });
+
+    $('#btnDownload').on('click', function () {
+        let capture = document.querySelector('#bg_area');
+        html2canvas(capture,{
+            scale: 3
+        }).then(canvas => {
+            saveAs(canvas.toDataURL(), 'file-name.png');
+            resetSrc();
+        });
+    });
+
+
+    function resetSrc() {
+        document.getElementById('uploadedImg').src = '';
+    }
+    function saveAs(uri, filename) {
+
+        let link = document.createElement('a');
+
+        if (typeof link.download === 'string') {
+
+            link.href = uri;
+            link.download = filename;
+
+            //Firefox requires the link to be in the body
+            document.body.appendChild(link);
+
+            //simulate click
+            link.click();
+
+            //remove the link when done
+            document.body.removeChild(link);
+
+        } else {
+
+            window.open(uri);
+
+        }
+    }
+
+
+
 
 
 
